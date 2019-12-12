@@ -33,13 +33,14 @@ class ViewFlower extends React.Component  {
 	}
 	
 	render() {
-		console.log(this.state.flowers);
-
+		var flowerList = [];
+		for (var i = 0; i < this.state.flowers.length && i < 10; i++) {
+			flowerList.push(<p>{this.state.flowers[i].NAME}&emsp; {this.state.flowers[i].PERSON}&emsp; {this.state.flowers[i].LOCATION}&emsp; {this.state.flowers[i].SIGHTED}</p>);
+		}
+		
 		return(
 			<div>
-			{this.state.flowers.map(flower => (
-				<p>{flower.NAME}&emsp; {flower.PERSON}&emsp; {flower.LOCATION}&emsp; {flower.SIGHTED}</p>
-			))}
+				{flowerList}
 			</div>
 		)
 	}

@@ -7,7 +7,10 @@ class ViewFlower extends React.Component  {
     }
 
     componentDidMount() {
-		const flowerName = "Draperia"//this.props.name
+		var flowerName = 0;
+		
+		if (this.props.flower)
+			flowerName = this.props.flower
 		
         axios.get(`http://localhost:8080/api/flowers/${flowerName}/sightings`)
             .then(res => {
@@ -15,6 +18,19 @@ class ViewFlower extends React.Component  {
                 this.setState({ flowers });
         })
     }
+	
+	componentDidUpdate() {
+		var flowerName = 0;
+		
+		if (this.props.flower)
+			flowerName = this.props.flower
+		
+        axios.get(`http://localhost:8080/api/flowers/${flowerName}/sightings`)
+            .then(res => {
+                const flowers = res.data.data;
+                this.setState({ flowers });
+        })
+	}
 	
 	render() {
 		console.log(this.state.flowers);

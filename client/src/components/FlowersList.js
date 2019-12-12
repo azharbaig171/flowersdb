@@ -18,13 +18,13 @@ class FlowersList extends React.Component  {
         .map(flowers => {
             return (
                 <tr key={flowers.COMNAME}>
-                    <td onClick={() => this.updateFlower(flowers.COMNAME)}>
+                    <td onClick={() => this.props.updateFlower(flowers.COMNAME)}>
                         {flowers.GENUS}
                     </td>
-                    <td>
+                    <td onClick={() => this.props.updateFlower(flowers.COMNAME)}>
                         {flowers.SPECIES}
                     </td>
-                    <td>
+                    <td onClick={() => this.props.updateFlower(flowers.COMNAME)}>
                         {flowers.COMNAME} 
                     </td>
                 </tr>

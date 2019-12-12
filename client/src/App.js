@@ -1,5 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+import FlowersList from './components/FlowersList';
+import AddSighting from './components/AddSighting';
+import ViewFlower from './components/ViewFlower';
+import UpdateFlower from './components/UpdateFlower';
 import './App.css';
 
 function App() {
@@ -19,13 +22,14 @@ function App() {
                       <b>Flowers</b>
                     </td>
                   </tr>
-                  {/*All Flowers List goes here */}
+                  <FlowersList/>
                 </table>
               </div>
             </div>
             <div className="column2">
-              {/*View Flowers List goes here */}
-              {/*Add Flowers List goes here */}
+              <ViewFlower/>
+              <UpdateFlower/>
+              <AddSighting/>
             </div>
           </div>
           {/*Credit to data was here */}

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 var db = require("../database")
 
+//Get list of all flowers
 router.get('/', (req, res) => {
     var sql = "select * from FLOWERS"
     var params = []
@@ -17,6 +18,7 @@ router.get('/', (req, res) => {
       });
 }),
 
+//Add new sighting to database
 router.post("/", (req, res, next) => {
   var errors=[]
   if (!req.body.name){
@@ -55,7 +57,7 @@ router.post("/", (req, res, next) => {
   });
 })
 
-
+//Find information about a specific flower
 router.get('/:flower', (req, res) => {
   var sql = 
   "SELECT * FROM FLOWERS WHERE COMNAME = ?"
@@ -72,6 +74,7 @@ router.get('/:flower', (req, res) => {
     });
 }),
 
+//Find all sightings for a given flower, ordered by most recent sighting
 router.get('/:flower/sightings', (req, res) => {
     var sql = 
     "SELECT * FROM SIGHTINGS WHERE NAME = ? ORDER BY SIGHTED DESC"
@@ -88,6 +91,7 @@ router.get('/:flower/sightings', (req, res) => {
       });
 }),
 
+//Update the information for a given flower
 router.patch("/:flower/update", (req, res, next) => {
   var data = {
       genus: req.body.genus,

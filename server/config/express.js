@@ -9,6 +9,7 @@ module.exports.init = function () {
 
     //body parsing middleware 
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
 
     //add a router
     app.use('/api/flowers', flowerRouter);

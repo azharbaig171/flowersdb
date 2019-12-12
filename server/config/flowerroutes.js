@@ -49,4 +49,30 @@ router.get('/:flower/sightings', (req, res) => {
       });
 }),
 
+router.patch("/:flower/update", (req, res, next) => {
+  var data = {
+      genus: req.body.genus,
+      species: req.body.species,
+      comname: req.body.comname
+  }
+  db.run(
+      `UPDATE FLOWERS SET
+        genus = COALESCE(?,genus), 
+        species = COALESCE(?,species), 
+        comname = COALESCE(?,comname) 
+        WHERE COMNAME = ?`,
+      [data.genus, data.species, data.comname, req.params.flower],
+      function (err, result) {
+          if (err){
+              res.status(400).json({"error": res.message})
+              return;
+          }
+          res.json({
+              message: "success",
+              data: data,
+              changes: this.changes
+          })
+  });
+})
+
 module.exports = router;

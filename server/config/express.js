@@ -16,7 +16,7 @@ module.exports.init = function () {
 
     //all other requests send 404'ed
     app.use(function(req, res){
-        res.json({"message":"NOOOOOO"})
+        res.json({"message":"Route not found"})
     });
 
     return app;

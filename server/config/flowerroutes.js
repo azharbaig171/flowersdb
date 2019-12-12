@@ -17,6 +17,45 @@ router.get('/', (req, res) => {
       });
 }),
 
+router.post("/", (req, res, next) => {
+  var errors=[]
+  if (!req.body.name){
+      errors.push("No name specified");
+  }
+  if (!req.body.person){
+      errors.push("No person specified");
+  }
+  if (!req.body.location){
+    errors.push("No location specified");
+  }
+  if (!req.body.sighted){
+    errors.push("No date specified");
+  }
+  if (errors.length){
+      res.status(400).json({"error":errors.join(",")});
+      return;
+  }
+  var data = {
+      name: req.body.name,
+      person: req.body.person,
+      location:req.body.location,
+      sighted:req.body.sighted
+  }
+  var sql ='INSERT INTO SIGHTINGS (name, person, location, sighted) VALUES (?,?,?,?)'
+  var params =[data.name, data.person, data.location, data.sighted]
+  db.run(sql, params, function (err, result) {
+      if (err){
+          res.status(400).json({"error": err.message})
+          return;
+      }
+      res.json({
+          "message": "success",
+          "data": data,
+      })
+  });
+})
+
+
 router.get('/:flower', (req, res) => {
   var sql = 
   "SELECT * FROM FLOWERS WHERE COMNAME = ?"

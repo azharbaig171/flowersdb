@@ -10,7 +10,6 @@ function App() {
 
   function updateFlower(flower) {
     setFlower(flower);
-    console.log(flower);
   }
   return (
       <div className="bg">

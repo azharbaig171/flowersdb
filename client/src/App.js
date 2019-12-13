@@ -35,8 +35,8 @@ function App() {
               flower = {flower}
               />
             </div>
-            <AddSighting/>
           </div>
+          <AddSighting/>
         </main>
       </div>
   );

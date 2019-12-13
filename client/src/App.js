@@ -34,7 +34,6 @@ function App() {
               <UpdateFlower
               flower = {flower}
               />
-              <AddSighting/>
             </div>
             <AddSighting/>
           </div>

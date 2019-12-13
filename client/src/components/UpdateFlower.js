@@ -61,7 +61,6 @@ class UpdateFlower extends React.Component  {
 							value={this.state.species} 
 							placeholder={this.state.flower.SPECIES}
 							onChange={event => this.setState({species: event.target.value})}
-							required 
 							/>
 						</label>
 						<label>
@@ -71,7 +70,6 @@ class UpdateFlower extends React.Component  {
 							value={this.state.genus} 
 							placeholder={this.state.flower.GENUS} 
 							onChange={event => this.setState({genus: event.target.value})}
-							required 
 							/>
 						</label>
 						<label>
@@ -81,7 +79,6 @@ class UpdateFlower extends React.Component  {
 							value={this.state.comname} 
 							placeholder={this.state.flower.COMNAME}
 							onChange={event => this.setState({comname: event.target.value})}
-							required 
 							/>
 						</label>
 						<input type="submit" value="Submit" />

@@ -35,13 +35,20 @@ class ViewFlower extends React.Component  {
 	render() {
 		var flowerList = [];
 		for (var i = 0; i < this.state.flowers.length && i < 10; i++) {
-			flowerList.push(<p>{this.state.flowers[i].NAME}&emsp; {this.state.flowers[i].PERSON}&emsp; {this.state.flowers[i].LOCATION}&emsp; {this.state.flowers[i].SIGHTED}</p>);
+			flowerList.push(
+				<li key={i}>
+					{this.state.flowers[i].NAME}&emsp; 
+					{this.state.flowers[i].PERSON}&emsp; 
+					{this.state.flowers[i].LOCATION}&emsp; 
+					{this.state.flowers[i].SIGHTED}
+				</li>
+			);
 		}
 		
 		return(
-			<div>
+			<ol>
 				{flowerList}
-			</div>
+			</ol>
 		)
 	}
 

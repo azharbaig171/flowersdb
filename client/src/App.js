@@ -31,7 +31,10 @@ function App() {
               <ViewFlower
               flower = {flower}
               />
-              <UpdateFlower/>
+              <UpdateFlower
+              flower = {flower}
+              />
+              <AddSighting/>
             </div>
             <AddSighting/>
           </div>

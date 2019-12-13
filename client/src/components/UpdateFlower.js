@@ -88,6 +88,7 @@ class UpdateFlower extends React.Component  {
 		else
 			return (
 				<div>
+					<p>Click on a flower to view more information</p>
 				</div>
 			);
 	}

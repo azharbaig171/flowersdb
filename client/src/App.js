@@ -32,10 +32,9 @@ function App() {
               flower = {flower}
               />
               <UpdateFlower/>
-              <AddSighting/>
             </div>
+            <AddSighting/>
           </div>
-          {/*Credit to data was here */}
         </main>
       </div>
   );

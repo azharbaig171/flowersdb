@@ -34,16 +34,16 @@ class FlowersList extends React.Component  {
         return (
             <div>
                 <tr>
-                    <td>
+                    <th>
                       <b>Genus</b>
-                    </td>
-                    <td>
+                    </th>
+                    <th>
                       <b>Species</b>
-                    </td>
-                    <td>
+                    </th>
+                    <th>
                       <b>Common Name</b>
-                    </td>
-                  </tr>
+                    </th>
+                </tr>
                 {flowers}
             </div>
         )

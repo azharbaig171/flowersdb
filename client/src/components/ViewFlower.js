@@ -33,6 +33,12 @@ class ViewFlower extends React.Component  {
 	}
 	
 	render() {
+		var initheader;
+		if (this.props.flower)
+		{
+			initheader = <h3>Most Recent Sightings</h3>
+		}
+
 		var flowerList = [];
 		for (var i = 0; i < this.state.flowers.length && i < 10; i++) {
 			flowerList.push(
@@ -46,9 +52,12 @@ class ViewFlower extends React.Component  {
 		}
 		
 		return(
+			<div>
+				{initheader}
 			<ol>
 				{flowerList}
 			</ol>
+			</div>
 		)
 	}
 

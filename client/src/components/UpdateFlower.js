@@ -4,9 +4,9 @@ import axios from 'axios';
 class UpdateFlower extends React.Component  {
     state = {
 		flower: {},
-        species: '',
-        genus: '',
-        comname: ''
+        species: null,
+        genus: null,
+        comname: null
     }
 	
 	handleSubmit = (event) => {
@@ -53,6 +53,7 @@ class UpdateFlower extends React.Component  {
 		if (this.state.flower)
 			return(
 				<div>
+					<h3>Change Flower Information</h3>
 					<form onSubmit={this.handleSubmit}>
 						<label>
 							Species:

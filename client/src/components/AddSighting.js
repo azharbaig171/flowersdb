@@ -29,6 +29,7 @@ class AddSighting extends React.Component  {
 	render() {
 		return(
 			<div className="">
+                <h3>Add Sighting</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name
